@@ -1,5 +1,7 @@
 const SUPABASE_URL = "https://ccxzjjsxggrxiaaehxxu.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_Qbn3NBaKGonv84Ud-KDszQ_owgaWLSl";
+const APP_RESET_COMPLETE_URI =
+  "com.luminhaw.plantcare://auth-callback?password_reset=complete";
 
 const views = {
   loading: document.querySelector("#loading-state"),
@@ -150,7 +152,17 @@ function setupPasswordForm(client) {
   });
 }
 
+function setupAppReturn() {
+  const button = document.querySelector("#return-to-app");
+  button.addEventListener("click", () => {
+    button.disabled = true;
+    button.textContent = "Opening LUMINHAW…";
+    window.location.href = APP_RESET_COMPLETE_URI;
+  });
+}
+
 async function start() {
+  setupAppReturn();
   const params = new URLSearchParams(window.location.search);
   const tokenHash = params.get("token_hash");
   const type = params.get("type") ?? params.get("flow");

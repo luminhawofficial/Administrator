@@ -21,9 +21,10 @@ this repository.
 - Passwords are sent directly to Supabase over HTTPS, are never written to
   browser storage, and are cleared from the form after success. Auth sessions
   are memory-only.
-- After verification or a password update, the site displays a text reminder
-  to return to the mobile application. It does not show an app-return link or
-  automatically open another app.
+- After email verification, the site displays a text reminder to return to the
+  mobile application. After a successful password update, a button opens the
+  Android app's registered callback; the app signs out its local session. This
+  affects only the device that opens the callback, not other sessions.
 
 ## Supabase production settings
 
@@ -92,7 +93,7 @@ test against a real user's account or password.
 4. Confirm a successful password update displays success only after Supabase
    returns the updated user; verify the old password no longer works and the
    new one does.
-5. Confirm the verification and password-update screens remind the user to go
-   back to the mobile application and show no app-return link.
+5. Confirm verification shows a text reminder; after password reset, test the
+   Return button on Android and verify that device is signed out.
 6. Confirm no request, page URL, browser storage, or console output contains a
    password or service-role key.
