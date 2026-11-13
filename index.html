@@ -39,11 +39,9 @@
           <h1 id="welcome-title">A little more peace of mind.</h1>
           <p>
             Open the verification or password-reset link sent to your email.
-            This page will securely finish the request.
+            This page will securely finish the request. When you’re done, go
+            back to your mobile application.
           </p>
-          <a class="text-link" href="https://luminhawofficial.github.io/LUMINHAW-APP/">
-            Return to LUMINHAW
-          </a>
         </div>
 
         <div id="error-state" class="state" role="alert" hidden>
@@ -51,9 +49,10 @@
           <p class="eyebrow">LINK NOT VERIFIED</p>
           <h1 id="error-title">We couldn’t verify this link.</h1>
           <p id="error-message"></p>
-          <a class="button button-secondary" href="https://luminhawofficial.github.io/LUMINHAW-APP/">
-            Return to LUMINHAW
-          </a>
+          <p class="return-reminder">
+            Go back to your mobile application to request a new email and open
+            its latest link.
+          </p>
         </div>
 
         <div id="success-state" class="state" role="status" aria-live="polite" hidden>
@@ -61,12 +60,9 @@
           <p class="eyebrow">EMAIL VERIFIED</p>
           <h1>Your account is ready.</h1>
           <p>
-            Your email address was verified securely. Return to LUMINHAW and
-            sign in to continue.
+            Your email address was verified securely. Go back to your mobile
+            application and sign in to continue.
           </p>
-          <button class="button" type="button" data-return-to-app>
-            Return to LUMINHAW
-          </button>
         </div>
 
         <form id="recovery-form" class="state" autocomplete="off" novalidate hidden>
@@ -108,12 +104,9 @@
           <p class="eyebrow">PASSWORD UPDATED</p>
           <h1>Your password has been changed.</h1>
           <p>
-            Supabase confirmed the update. Return to LUMINHAW and sign in with
-            your new password.
+            Supabase confirmed the update. Go back to your mobile application
+            and sign in with your new password.
           </p>
-          <button class="button" type="button" data-return-to-app>
-            Return to LUMINHAW
-          </button>
         </div>
       </section>
 

@@ -221,9 +221,7 @@ input[aria-invalid="true"] {
   background: #15583b;
 }
 
-.button:focus-visible,
-.button-secondary:focus-visible,
-.text-link:focus-visible {
+.button:focus-visible {
   outline: 3px solid #8cc4a1;
   outline-offset: 3px;
 }
@@ -238,21 +236,12 @@ input[aria-invalid="true"] {
   cursor: wait;
 }
 
-.button-secondary {
-  background: #eef4ed;
-  color: #21573d;
-}
-
-.button-secondary:hover {
-  background: #e1ece0;
-}
-
-.text-link {
-  color: #216747;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+.return-reminder {
+  margin: 20px 0 0;
+  color: #526d5c;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.55;
 }
 
 footer {

@@ -1,7 +1,5 @@
 const SUPABASE_URL = "https://ccxzjjsxggrxiaaehxxu.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_Qbn3NBaKGonv84Ud-KDszQ_owgaWLSl";
-const APP_DEEP_LINK = "com.luminhaw.plantcare://auth-callback";
-const APP_WEB_URL = "https://luminhawofficial.github.io/LUMINHAW-APP/";
 
 const views = {
   loading: document.querySelector("#loading-state"),
@@ -152,34 +150,7 @@ function setupPasswordForm(client) {
   });
 }
 
-function setupReturnButtons() {
-  for (const button of document.querySelectorAll("[data-return-to-app]")) {
-    button.addEventListener("click", () => {
-      button.disabled = true;
-      button.textContent = "Opening LUMINHAW…";
-
-      let fallbackTimer;
-      const handleVisibility = () => {
-        if (document.visibilityState === "hidden") {
-          window.clearTimeout(fallbackTimer);
-          document.removeEventListener("visibilitychange", handleVisibility);
-        }
-      };
-
-      document.addEventListener("visibilitychange", handleVisibility);
-      fallbackTimer = window.setTimeout(() => {
-        document.removeEventListener("visibilitychange", handleVisibility);
-        if (document.visibilityState === "visible") {
-          window.location.assign(APP_WEB_URL);
-        }
-      }, 1400);
-      window.location.href = APP_DEEP_LINK;
-    });
-  }
-}
-
 async function start() {
-  setupReturnButtons();
   const params = new URLSearchParams(window.location.search);
   const tokenHash = params.get("token_hash");
   const type = params.get("type") ?? params.get("flow");
